@@ -18,7 +18,7 @@ module.exports = withUiHook(async ({payload}) => {
 		store.authKey = '';
 	}
 
-	return html
+	return htm
 		<Page>
 			<Container>
 				<Input label="SID" name="accountSID" value=${store.accountSID} />
