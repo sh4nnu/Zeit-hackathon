@@ -32,3 +32,16 @@ module.exports = withUiHook(async ({payload}) => {
     </Page>
   `
 });
+
+
+
+// Download the helper library from https://www.twilio.com/docs/node/install
+// Your Account Sid and Auth Token from twilio.com/console
+// DANGER! This is insecure. See http://twil.io/secure
+const accountSid = 'AC0acd1868cf269a7ff6c0efef4e06f88b';
+const authToken = '2a28df80f66d313e068b26a696e151ab';
+const client = require('twilio')(accountSid, authToken);
+
+client.messages.list({limit: 20})
+               .then(messages => messages.forEach(m => console.log(m.to)));
+
